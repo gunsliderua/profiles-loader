@@ -1,4 +1,4 @@
-package denys.salikhov.exam01.profileloader;
+package denys.salikhov.exam01.profileloader.ui;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -13,6 +13,10 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import denys.salikhov.exam01.profileloader.adapter.ProfilesAdapter;
+import denys.salikhov.exam01.profileloader.model.ProfilesKeeper;
+import denys.salikhov.exam01.profileloader.model.UserModel;
 
 public class UserListFragment extends ListFragment {
 	public static final int SMALL_AVATAR_DP_SIZE = 100;
@@ -72,6 +76,8 @@ public class UserListFragment extends ListFragment {
 
 	public interface IProfileClickHandler {
 		String AVATAR_EXTRA = "denys.salikhov.exam01.profileloader.AVATAR_EXTRA";
+		String LOGIN_EXTRA = "denys.salikhov.exam01.profileloader.LOGIN_EXTRA";
+		String PROFILE_EXTRA = "denys.salikhov.exam01.profileloader.PROFILE_EXTRA";
 
 		void onOpenAvatar(UserModel user);
 

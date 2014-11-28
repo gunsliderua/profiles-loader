@@ -1,4 +1,4 @@
-package denys.salikhov.exam01.profileloader;
+package denys.salikhov.exam01.profileloader.model;
 
 import com.google.gson.annotations.SerializedName;
 

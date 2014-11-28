@@ -1,4 +1,4 @@
-package denys.salikhov.exam01.profileloader;
+package denys.salikhov.exam01.profileloader.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -9,12 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import denys.salikhov.exam01.profileloader.utils.ImageLoader;
+import denys.salikhov.exam01.profileloader.R;
+import denys.salikhov.exam01.profileloader.model.UserModel;
+
 public class BigAvatarFragment extends Fragment {
 	public static final int BIG_AVATER_DP_SIZE = 600;
 	String imageSizeUrlTail;
 
 	// We use that avatar reference to refresh view when it will be ready
-	// We need it because there could be a situation when updateAvatar is called, but ImageView was not yet created.
+	// We need it because there could be a situation when updateAvatar(...) is called, but ImageView was not yet created.
 	String lastAvatarBaseLinkRequested;
 	ImageView ivAvatar;
 
@@ -30,7 +34,7 @@ public class BigAvatarFragment extends Fragment {
 		} catch (ClassCastException e) {
 			// if we failed to cast - thats OK, it means that fragment was used in single-pane mode
 			// so we just do not expect parent activity to provide us "lastClickedUser" and
-			// updateAvater expected to be called by other party (ie by Activity)
+			// updateAvatar expected to be called by other party (ie by Activity)
 		}
 	}
 

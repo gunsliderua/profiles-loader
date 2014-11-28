@@ -1,4 +1,4 @@
-package denys.salikhov.exam01.profileloader;
+package denys.salikhov.exam01.profileloader.model;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,8 +19,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-//Enum singleton by Joshua Bloch explained this approach in his Effective Java Reloaded talk at Google I/O 2008
-//I will use it as a long-live object to keep downloaded data and reflect the current state of data readiness
+import denys.salikhov.exam01.profileloader.R;
+
+//  Enum singleton by Joshua Bloch explained this approach in his Effective Java Reloaded talk at Google I/O 2008
+//  I will use it as a long-live object to keep downloaded data and reflect the current state of data readiness
 public enum ProfilesKeeper {
 	INSTANCE;
 	private final String TAG = "ProfilesKeeper";

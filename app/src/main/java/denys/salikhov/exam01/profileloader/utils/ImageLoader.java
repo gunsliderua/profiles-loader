@@ -1,4 +1,4 @@
-package denys.salikhov.exam01.profileloader;
+package denys.salikhov.exam01.profileloader.utils;
 
 
 import android.graphics.Bitmap;
@@ -17,22 +17,24 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import denys.salikhov.exam01.profileloader.R;
+
 //enum singleton
 public enum ImageLoader {
 	INSTANCE;
 	private final static String TAG = "ImageLoader";
 	final int cacheSize = 100;
-	private LruCache<String, Bitmap> mMemoryCache = new LruCache<String, Bitmap>(cacheSize);
+	private final LruCache<String, Bitmap> mMemoryCache = new LruCache<String, Bitmap>(cacheSize);
 
 	//I will use this map in oder to keep last requested URL for particular ImageView
 	// After image is downloaded successfully and before we put it inside original intended ImageView we need to check if
 	// there were another subsequent requests for that ImageView (because ListView reuses row views)
-	private Map<View, String> lastContentForView = new HashMap<View, String>(cacheSize);
+	private final Map<View, String> lastContentForView = new HashMap<View, String>(cacheSize);
 
 	//There is possible situation when loadBitmap is called multiple times for same URL while image is still not in the cache and previous AsyncTask is running.
 	//We want to avoid extra traffic consumption so we will use this Set to keep track of current image downloading tasks
 	// and will spawn new tasks only if such URL is not currently downloading
-	private Set<String> currentlyDownloading = new HashSet<String>();
+	private final Set<String> currentlyDownloading = new HashSet<String>();
 
 	public void loadBitmap(String imageKey, ImageView imageView, boolean isSmallPlaceholder) {
 		final Bitmap bitmap = mMemoryCache.get(imageKey);

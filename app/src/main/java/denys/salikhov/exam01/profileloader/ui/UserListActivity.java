@@ -1,4 +1,4 @@
-package denys.salikhov.exam01.profileloader;
+package denys.salikhov.exam01.profileloader.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import denys.salikhov.exam01.profileloader.model.ProfilesKeeper;
+import denys.salikhov.exam01.profileloader.R;
+import denys.salikhov.exam01.profileloader.model.UserModel;
 
 
 public class UserListActivity extends ActionBarActivity implements UserListFragment.IProfileClickHandler {
@@ -17,9 +21,9 @@ public class UserListActivity extends ActionBarActivity implements UserListFragm
 		super.onCreate(savedInstanceState);
 		if (savedInstanceState != null) {
 			UserModel user = new UserModel();
-			user.setLogin(savedInstanceState.getString("login"));
-			user.setAvatarBaseLink(savedInstanceState.getString("avatar_url"));
-			user.setProfileLink(savedInstanceState.getString("html_url"));
+			user.setLogin(savedInstanceState.getString(LOGIN_EXTRA));
+			user.setAvatarBaseLink(savedInstanceState.getString(AVATAR_EXTRA));
+			user.setProfileLink(savedInstanceState.getString(PROFILE_EXTRA));
 			lastClickedUser = user;
 		}
 		setContentView(R.layout.activity_user_list);
@@ -50,9 +54,9 @@ public class UserListActivity extends ActionBarActivity implements UserListFragm
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
 		if (lastClickedUser != null) {
-			outState.putString("login", lastClickedUser.getLogin());
-			outState.putString("avatar_url", lastClickedUser.getAvatarBaseLink());
-			outState.putString("html_url", lastClickedUser.getProfileLink());
+			outState.putString(LOGIN_EXTRA, lastClickedUser.getLogin());
+			outState.putString(AVATAR_EXTRA, lastClickedUser.getAvatarBaseLink());
+			outState.putString(PROFILE_EXTRA, lastClickedUser.getProfileLink());
 		}
 	}
 
@@ -76,7 +80,7 @@ public class UserListActivity extends ActionBarActivity implements UserListFragm
 
 	@Override
 	public void onOpenProfile(UserModel user) {
-
+	// reserved for future enhancements like handling profile opening
 	}
 
 	@Override

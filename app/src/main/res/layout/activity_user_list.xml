@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_status"
-        class="denys.salikhov.exam01.profileloader.FetchStatusFragment"
+        class="denys.salikhov.exam01.profileloader.ui.FetchStatusFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout="@layout/last_result_status">
@@ -15,7 +15,7 @@
 
     <fragment
         android:id="@+id/fragment_list"
-        class="denys.salikhov.exam01.profileloader.UserListFragment"
+        class="denys.salikhov.exam01.profileloader.ui.UserListFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
