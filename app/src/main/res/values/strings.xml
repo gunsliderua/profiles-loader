@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Profile loader</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="github_users">https://api.github.com/users</string>
+    <string name="successfuly">SUCCEEDED</string>
+    <string name="failed">FAILED</string>
+    <string name="image_size_url_tail">\?s=%d</string>
+    <string name="title_activity_avatar">Photo</string>
+    <string name="never_tried">Never tried</string>
+
+</resources>
