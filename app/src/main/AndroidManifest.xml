@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="denys.salikhov.exam01.profileloader.UserListActivity"
+            android:name=".ui.UserListActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop">
             <intent-filter>
@@ -21,9 +21,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="denys.salikhov.exam01.profileloader.AvatarActivity"
+            android:name=".ui.AvatarActivity"
             android:label="@string/title_activity_avatar"
-            android:parentActivityName="denys.salikhov.exam01.profileloader.UserListActivity">
+            android:parentActivityName=".ui.UserListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="denys.salikhov.exam01.profileloader.UserListActivity"/>

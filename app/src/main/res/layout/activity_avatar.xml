@@ -1,6 +1,6 @@
 <fragment
     android:id="@+id/fragment_big_avatar"
-    class="denys.salikhov.exam01.profileloader.BigAvatarFragment"
+    class="denys.salikhov.exam01.profileloader.ui.BigAvatarFragment"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package denys.salikhov.exam01.profileloader;
+package denys.salikhov.exam01.profileloader.ui;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -13,6 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import denys.salikhov.exam01.profileloader.R;
+import denys.salikhov.exam01.profileloader.model.ProfilesKeeper;
 
 
 public class FetchStatusFragment extends Fragment {
@@ -44,7 +47,6 @@ public class FetchStatusFragment extends Fragment {
 		tvDatetime = (TextView) resultView.findViewById(R.id.update_datetime);
 		updateViews();
 		return rootView;
-
 	}
 
 	private void updateViews() {
@@ -70,7 +72,7 @@ public class FetchStatusFragment extends Fragment {
 				updatingView.setVisibility(View.VISIBLE);
 				break;
 			default:
-				throw new IllegalStateException("Not expected state");
+				throw new IllegalStateException("Not expected state " + state.toString());
 		}
 	}
 
@@ -78,7 +80,6 @@ public class FetchStatusFragment extends Fragment {
 	public void onPause() {
 		super.onPause();
 		LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(onNotice);
-
 	}
 
 	@Override
@@ -86,6 +87,5 @@ public class FetchStatusFragment extends Fragment {
 		super.onResume();
 		LocalBroadcastManager.getInstance(getActivity()).registerReceiver(onNotice, iff);
 		updateViews();
-
 	}
 }

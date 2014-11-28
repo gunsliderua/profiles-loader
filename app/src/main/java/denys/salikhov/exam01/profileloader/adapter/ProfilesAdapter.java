@@ -1,4 +1,4 @@
-package denys.salikhov.exam01.profileloader;
+package denys.salikhov.exam01.profileloader.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import denys.salikhov.exam01.profileloader.utils.ImageLoader;
+import denys.salikhov.exam01.profileloader.R;
+import denys.salikhov.exam01.profileloader.model.UserModel;
+import denys.salikhov.exam01.profileloader.ui.UserListFragment;
+
 public class ProfilesAdapter extends BaseAdapter {
 
 	private LayoutInflater layoutInflater;
@@ -20,7 +25,7 @@ public class ProfilesAdapter extends BaseAdapter {
 	public ProfilesAdapter(Context context, List<UserModel> data, float imageSize, UserListFragment.IProfileClickHandler profileClickHandler) {
 		this.data = data;
 		this.imageSizeUrlTail = context.getString(R.string.image_size_url_tail, (int) imageSize);
-		layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		this.layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		this.profileClickHandler = profileClickHandler;
 	}
 
@@ -76,6 +81,5 @@ public class ProfilesAdapter extends BaseAdapter {
 		public TextView tvProfileLink;
 		public ImageView ivAvatar;
 	}
-
 
 }

@@ -1,7 +1,9 @@
-package denys.salikhov.exam01.profileloader;
+package denys.salikhov.exam01.profileloader.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+
+import denys.salikhov.exam01.profileloader.R;
 
 
 public class AvatarActivity extends ActionBarActivity {
